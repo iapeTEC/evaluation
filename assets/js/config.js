@@ -1,7 +1,7 @@
 // CONFIG (edit these)
 window.APP_CONFIG = {
-  SCRIPT_URL: "PASTE_YOUR_WEB_APP_URL_HERE", // ends with /exec
-  API_KEY: "PASTE_YOUR_SECRET_KEY_HERE"
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyVxTa4luMJVA5ogoVqm1A0JA-q7eyrHkp-C0eNQVq0dmFD7q6TgpT24U5HVNh8AUa2OQ/exec", // ends with /exec
+  API_KEY: "MzAk9do3@.@"
 };
 
 // Your class list (shown on home screen)
