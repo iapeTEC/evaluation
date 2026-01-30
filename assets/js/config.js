@@ -1,6 +1,6 @@
 // CONFIG (edit these)
 window.APP_CONFIG = {
-  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyVxTa4luMJVA5ogoVqm1A0JA-q7eyrHkp-C0eNQVq0dmFD7q6TgpT24U5HVNh8AUa2OQ/exec", // ends with /exec
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwNQRQWy5xYg4nHha_5Kx9r1bOdE2bBR4HFF5RP7GsCpQCQLNuA30J01PcvmBCcI1QMcg/exec", // ends with /exec
   API_KEY: "MzAk9do3@.@"
 };
 
