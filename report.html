@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Relatórios</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <strong>Relatórios</strong>
+      <span>Turma + sessão • gráfico pizza + feedback</span>
+    </div>
+    <nav>
+      <a href="index.html">Turmas</a>
+      <a href="report.html">Relatórios</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="card row">
+    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+      <div class="field">
+        <label>Turma</label>
+        <input id="classId" placeholder="Ex.: 7ano" />
+      </div>
+      <div class="field">
+        <label>Session ID</label>
+        <input id="sessionId" placeholder="(vazio = última sessão da turma)" />
+      </div>
+      <span class="badge" id="hint"></span>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <button class="btn ghost" id="loadBtn">Carregar</button>
+    </div>
+  </div>
+
+  <div class="card footerBar" style="margin-top:14px;">
+    <div class="note">
+      Use <b>classId</b> igual ao do botão da turma (ex.: <code>7ano</code>). Se deixar Session ID vazio, pega a última sessão daquela turma.
+    </div>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div id="reports" class="reportGrid" style="margin-top:14px;"></div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/jsonp.js"></script>
+<script src="assets/js/report.js"></script>
+</body>
+</html>

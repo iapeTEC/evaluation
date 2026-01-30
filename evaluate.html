@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Avaliação • Turma</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <strong id="pageTitle">Avaliação</strong>
+      <span id="pageSub">Carregando turma…</span>
+    </div>
+    <nav>
+      <a href="index.html">Turmas</a>
+      <a href="report.html">Relatórios</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="card row">
+    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+      <div class="field">
+        <label>Teacher</label>
+        <input id="teacher" placeholder="Ex.: Bruno" />
+      </div>
+      <div class="field">
+        <label>Session ID</label>
+        <input id="sessionId" placeholder="Ex.: 2026-01-30-AULA1" />
+      </div>
+      <span class="badge" id="classBadge"></span>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <button class="btn ghost" id="reloadBtn">Recarregar</button>
+      <button class="btn primary" id="finalizeBtn">Finalizar Aula</button>
+    </div>
+  </div>
+
+  <div class="card footerBar" style="margin-top:14px;">
+    <div class="note">
+      Toque em <b>Listening/Speaking/Reading/Writing</b> → escolha o nível pela descrição → a janela fecha e o botão fica com o <b>número</b> selecionado.
+      <br><small class="muted">Fotos em <code>assets/students/</code>. Se não achar, usa <code>placeholder.png</code>.</small>
+    </div>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div id="studentsGrid" class="grid" style="margin-top:14px;"></div>
+</main>
+
+<!-- Hidden iframe + form for POST (avoids CORS preflight) -->
+<iframe name="sink" style="display:none;"></iframe>
+<form id="postForm" target="sink" method="POST" style="display:none;">
+  <input name="action" value="submitGrades" />
+  <input name="key" />
+  <input name="classId" />
+  <input name="sessionId" />
+  <input name="teacher" />
+  <input name="grades" />
+</form>
+
+<!-- Modal -->
+<div id="modalOverlay" class="modalOverlay">
+  <div class="modal">
+    <div class="modalHeader">
+      <div class="title">
+        <strong id="modalSkill">Skill</strong>
+        <span id="modalStudent">Aluno</span>
+      </div>
+      <button class="iconBtn" id="modalClose">Fechar</button>
+    </div>
+    <div class="modalBody">
+      <div id="levelList" class="levelList"></div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/jsonp.js"></script>
+<script src="assets/js/rubric.js"></script>
+<script src="assets/js/evaluate.js"></script>
+</body>
+</html>

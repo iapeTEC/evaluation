@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IAPETEC • Avaliação</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <strong>IAPETEC • Avaliação</strong>
+      <span>Escolha a turma</span>
+    </div>
+    <nav>
+      <a href="index.html">Turmas</a>
+      <a href="report.html">Relatórios</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="card row" style="margin-bottom:14px;">
+    <div class="note">
+      <b>Fluxo:</b> escolha a turma → avalie os alunos → <b>Finalizar Aula</b> → veja <b>Relatórios</b>.
+    </div>
+    <span class="badge">Estilo iPhone • clean</span>
+  </div>
+
+  <div id="classGrid" class="classGrid"></div>
+</main>
+
+<script src="assets/js/config.js"></script>
+<script>
+  const grid = document.getElementById("classGrid");
+  window.CLASSES.forEach(c => {
+    const card = document.createElement("div");
+    card.className = "classCard";
+    card.innerHTML = `<strong>${c.label}</strong><span>${c.subtitle || ""}</span>`;
+    card.onclick = () => location.href = `evaluate.html?classId=${encodeURIComponent(c.id)}`;
+    grid.appendChild(card);
+  });
+</script>
+</body>
+</html>
